@@ -1,0 +1,7 @@
+---
+- name: 'Configure newly installed Raspberry Pi'
+  hosts: brandnewpi
+  roles:
+    - newdevice
+  remote_user: pi
+  sudo: yes

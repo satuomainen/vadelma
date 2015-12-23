@@ -1,0 +1,10 @@
+---
+# The I2C modules are needed to use the DHT22 and the BMP085
+- name: Enable i2c-bcm2708
+  lineinfile: dest=/etc/modules regexp="^i2c-bcm2708" line="i2c-bcm2708"
+- name: Enable i2c-dev
+  lineinfile: dest=/etc/modules regexp="^i2c-dev" line="i2c-dev"
+- name: Ensure spi-bcm2708 is not blacklisted
+  lineinfile: dest=/etc/modprobe.d/raspi-blacklist.conf regexp="^blacklist spi-bcm2708" state=absent
+- name: Ensure i2c-bcm2708 is not blacklisted
+  lineinfile: dest=/etc/modprobe.d/raspi-blacklist.conf regexp="^blacklist i2c-bcm2708" state=absent

@@ -1,0 +1,14 @@
+#
+# This file will point to the hosts that will be configured by the playbook.yml.
+#
+# When Raspberry Pi is installed with the Raspbian distro, it will automatically
+# have the hostname 'raspberrypi' and Avahi will advertise it in your LAN as
+# raspberrypi.local so you do not need to find out the IP address.
+#
+# If you use another Raspberry Pi distro, you should find out the IP address of
+# the new device (e.g. with nmap or your router's dhcp listing) and replace the 
+# hostname below with the IP address.
+#
+
+[brandnewpi]
+raspberrypi.local

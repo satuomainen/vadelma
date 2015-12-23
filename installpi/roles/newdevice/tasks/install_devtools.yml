@@ -1,0 +1,15 @@
+---
+- name: Update repositories
+  apt: update_cache=yes
+- name: Install or update git
+  apt: name=git state=present
+- name: Install build-essential
+  apt: name=build-essential state=present
+- name: Install python-dev
+  apt: name=python-dev state=present
+- name: Install python-smbus
+  apt: name=python-smbus state=present
+- name: Install mysql-server
+  apt: name=mysql-server state=present
+- name: Install python-mysqldb
+  apt: name=python-mysqldb state=present

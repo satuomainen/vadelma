@@ -1,0 +1,17 @@
+---
+# Add your public key to the new device's authorized keys. Prefer id_dsa.pub but fall back to id_rsa.pub.
+- name: Add your public key to the new device pi user's authorized keys
+  authorized_key: manage_dir=yes user=pi key="{{ lookup('file', item) }}"
+  with_first_found:
+    - files:
+        - id_dsa.pub
+        - id_rsa.pub
+      paths:
+        - ~/.ssh
+  register: pubkey_result
+- name: Disallow pi user to login with password, only allow public key login
+  lineinfile: dest=/etc/ssh/sshd_config line="PasswordAuthentication no"
+  when: pubkey_result|success
+- name: Restart ssh daemon to take new settings into use
+  service: name=sshd state=restarted
+  when: pubkey_result|success

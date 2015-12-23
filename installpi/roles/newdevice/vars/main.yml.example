@@ -1,0 +1,13 @@
+---
+#
+# This is an example vars/main.yml file. To be able to run the playbook, you
+# need copy this file to the name vars/main.yml and configure the variables
+# there. Do not commit the file with the actual values into git.
+#
+
+#
+# The hostname you want to give to you new device. If you don't touch the 
+# defaults, after the installation is complete, you can ssh into your new
+# device like this: ssh pi@randompi.local
+#
+newdevice_hostname: randompi

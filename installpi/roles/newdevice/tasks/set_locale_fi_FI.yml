@@ -1,0 +1,3 @@
+---
+- name: Set the locale to fi_FI
+  lineinfile: dest=/etc/default/locale regexp="^LANG" line="LANG=fi_FI.UTF-8"

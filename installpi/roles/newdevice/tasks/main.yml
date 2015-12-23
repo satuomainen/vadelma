@@ -1,0 +1,18 @@
+---
+# Basic configuration
+- include: setup_ssh_access.yml
+- include: set_keyboard_fi.yml
+- include: set_locale_fi_FI.yml
+
+# Install and configure development environment and GPIO access to I2C
+- include: install_devtools.yml
+- include: configure_i2c.yml
+
+# Clone Adafruit repos for easy sensor access
+- include: create_project_directory.yml
+- include: clone_and_install_bmp.yml
+- include: clone_and_install_dht.yml
+
+# Do this action as the last step, after this raspberry.local cannot be accessed anymore
+- include: set_hostname.yml
+- include: reboot.yml

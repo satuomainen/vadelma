@@ -1,0 +1,3 @@
+---
+- name: 'Create the project directory under the pi user'
+  file: path="/home/pi/project" state=directory mode=0775 owner=pi group=root

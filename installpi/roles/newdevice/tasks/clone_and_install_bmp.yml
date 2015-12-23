@@ -1,0 +1,8 @@
+---
+# Clone the Adafruit Python BMP library for the BMP085/BMP180 barometric pressure sensor and install it
+- name: Clone Adafruit Python BMP repository
+  git: repo=https://github.com/adafruit/Adafruit_Python_BMP.git
+       dest="/home/pi/project/Adafruit_Python_BMP"
+       clone=yes
+- name: Install the Adafruit Python BMP library
+  command: python setup.py install chdir="/home/pi/project/Adafruit_Python_BMP"
