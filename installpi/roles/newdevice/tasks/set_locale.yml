@@ -1,0 +1,7 @@
+---
+- name: Set the default locale
+  lineinfile: dest=/etc/default/locale regexp="^LANG" line="LANG={{ newdevice_locale }}"
+- name: Add the locale to the locales to be built
+  lineinfile: dest=/etc/locale.gen line="{{ newdevice_locale }} {{ newdevice_locale_encoding }}"
+- name: Generate the locale
+  command: /usr/sbin/locale-gen

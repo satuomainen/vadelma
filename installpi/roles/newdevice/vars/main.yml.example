@@ -11,3 +11,10 @@
 # device like this: ssh pi@randompi.local
 #
 newdevice_hostname: randompi
+
+#
+# Language and locale settings
+#
+newdevice_locale: fi_FI.UTF-8
+newdevice_locale_encoding: UTF-8
+newdevice_keyboard: fi

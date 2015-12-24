@@ -1,3 +1,0 @@
----
-- name: Set the keyboard layout to Finnish
-  lineinfile: dest=/etc/default/keyboard regexp="^XKBLAYOUT" line="XKBLAYOUT=\"fi\""

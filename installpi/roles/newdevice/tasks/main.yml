@@ -1,8 +1,8 @@
 ---
 # Basic configuration
 - include: setup_ssh_access.yml
-- include: set_keyboard_fi.yml
-- include: set_locale_fi_FI.yml
+- include: set_keyboard.yml
+- include: set_locale.yml
 
 # Install and configure development environment and GPIO access to I2C
 - include: install_devtools.yml

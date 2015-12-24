@@ -1,0 +1,3 @@
+---
+- name: Set the keyboard layout
+  lineinfile: dest=/etc/default/keyboard regexp="^XKBLAYOUT" line="XKBLAYOUT=\"{{ newdevice_keyboard }}\""
